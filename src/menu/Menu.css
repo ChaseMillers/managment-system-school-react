@@ -1,0 +1,13 @@
+.menu-item{
+    text-decoration: none;
+    padding: 5px;
+    padding-right: 10px;
+  }
+  
+  ul.nav {
+    height: 100vh;
+  }
+  
+  div#menu-container{
+    border-right: solid 1px grey;
+  }

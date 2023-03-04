@@ -1,0 +1,47 @@
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Open Sans',sans-serif;
+    color: #292a2c;
+    margin: 0;
+    padding: 0;
+}
+
+.title{
+    text-align: center;
+    font-size: 35px;
+    padding: 10px 0;
+}
+.sub-title{
+    color:black;
+    font-size: 20px;
+    font-weight: 200;
+}
+.app-header {
+    background-color: #050e1f;
+    display: flex;
+  }
+  
+.app-header h1 {
+    font-size: calc(10px + 2vmin);
+    color: white;
+    margin-left: 20px;
+}
+
+
+.body-container{
+    display: flex;
+}
+
+.container-layout{
+    width: 100%;
+}
+
+.center-layout{
+    display: flex;
+    align-items: center;
+    flex-direction: column
+}
+
