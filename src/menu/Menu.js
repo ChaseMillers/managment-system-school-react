@@ -11,6 +11,10 @@ const Menu = () => {
         {
             path: '/',
             text: 'Products'
+        },
+        {
+            path: '/add-product',
+            text: 'Add Product'
         }
     ];
   return (

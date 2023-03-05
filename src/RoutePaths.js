@@ -1,8 +1,8 @@
 import React from 'react';
 import {  BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import Home from "./pages/Products"
-
+import Products from "./pages/products/Products"
+import AddProduct from "./pages/addProduct/AddProduct"
 
 const RoutePaths = () => {
   
@@ -10,7 +10,8 @@ const RoutePaths = () => {
     return(
         <Router>
             <Routes>
-                <Route path="/" element={<Home />} /> 
+                <Route path="/" element={<Products />} /> 
+                <Route path="/add-product" element={<AddProduct />} /> 
             </Routes>
         </Router>
     )

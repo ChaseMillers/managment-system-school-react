@@ -1,0 +1,50 @@
+img.product-img {
+    max-width: 200px;
+}
+
+.product-container{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+
+.product{
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    text-align: center;
+}
+
+.remove-margin{
+    margin: 0px;
+}
+
+.red-btn{
+    background-color: red;
+    color: white;
+}
+.blue-btn{
+    background-color: blue;
+    color: white;
+}
+
+.btn{
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+    margin: 5px;
+    
+}
+.btn:hover {
+    cursor: pointer;
+    box-shadow: 1px 2px 5px #888888;
+  }
+
+.set-width{
+    max-width:1000px;
+    margin: auto;
+}
+
+/* For small width or phone */
+@media only screen and (max-width: 1000px) {
+    .product-container{
+        grid-template-columns: auto;
+    }
+  }

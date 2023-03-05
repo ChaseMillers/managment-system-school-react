@@ -10,4 +10,5 @@
   
   div#menu-container{
     border-right: solid 1px grey;
+    min-width: 160px;
   }
