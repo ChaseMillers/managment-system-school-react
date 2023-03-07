@@ -5,11 +5,11 @@ const URL = "http://localhost:8080"
 export const createProduct =({ data, setResponse })=>{
 
     const formData = {
-        "name":"Stapler",
-        "price":"5.99",
-        "quantity":"5",
-        "description":"This is a fine stapler, that much is for sure",
-        "url": "https://media.officedepot.com/images/f_auto,q_auto,e_sharpen,h_450/products/907183/907183_p_1/907183"
+        "name":data.name,
+        "price":data.price,
+        "quantity":data.quantity,
+        "description":data.description,
+        "url":data.url
     }
 
     
@@ -41,3 +41,34 @@ export const getProducts =({ setLoading, setProducts})=>{
     })
 }
 
+export const deleteByID =({products, setReload, reload})=>{
+    axios.delete(`${URL}/api/product/${products.id}`).then(
+        response => { 
+            console.log(response.data)
+            setReload(!reload)
+    })
+    .catch(error => {
+        const msg = error.response.data
+        console.log(error.response.data);
+    })
+}
+
+export const editProduct =({data, setReload, reload, products})=>{
+    const formData = {
+        "name":data.name,
+        "price":data.price,
+        "quantity":data.quantity,
+        "description":data.description,
+        "url":data.url
+    }
+
+    axios.put(`${URL}/api/product/${products.id}`, formData).then(
+        response => { 
+            console.log(response.data)
+            setReload(!reload)
+    })
+    .catch(error => {
+        const msg = error.response.data
+        console.log(error.response.data);
+    })
+}

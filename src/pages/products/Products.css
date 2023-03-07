@@ -1,5 +1,6 @@
 img.product-img {
     max-width: 200px;
+    max-height: 150px;
 }
 
 .product-container{
@@ -40,6 +41,10 @@ img.product-img {
 .set-width{
     max-width:1000px;
     margin: auto;
+}
+
+.description{
+    padding: 0 15px;
 }
 
 /* For small width or phone */

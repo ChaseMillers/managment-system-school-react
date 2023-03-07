@@ -1,16 +1,16 @@
 import React, { useState, Fragment } from 'react';
 import Layout from '../../layout/Layout'
-import "./AddProduct.css"
-import {createProduct} from '../../api/APIProducts'
+import "./EditProduct.css"
+import {editProduct} from '../../api/APIProducts'
 
-const AddProduct = () => {
+const EditProduct = ({products, setReload, reload}) => {
        
         const [data, setData] = useState({
-            name:"",
-            price:"",
-            quantity:"",
-            description:"",
-            url: ""
+            name:products.name,
+            price:products.price,
+            quantity:products.quantity,
+            description:products.description,
+            url: products.url
         });
         const [response, setResponse] = useState()
 
@@ -22,10 +22,13 @@ const AddProduct = () => {
         // SUBMIT
         const handleSubmit = e => {
             e.preventDefault();
-            createProduct({data, setResponse})
+            editProduct({data, setReload, reload, products})
         };
 
-        
+        const cancle =()=> {
+            setReload(!reload)
+        }
+
         const form = () => (
         
              <form onSubmit={handleSubmit} className="center">
@@ -87,20 +90,18 @@ const AddProduct = () => {
                     required
                 />
 
-                <button type="submit">Add Product</button>
+                <button type="submit" className='green-btn'>Save</button>
+                <button  className='red-btn' onClick={()=> cancle()}>Cancle</button>
             </form>
         );
 
         return (
-            <Layout>
-                <div className='center-layout'>
-                    {form()}
-                </div>
-                {response && <p className='success'>Product {response.name} Was Successfully Added.</p>}
-            </Layout>
+            <div className='center-layout'>
+                {form()}
+            </div>
         );
 
     
 }
 
-export default AddProduct;
+export default EditProduct;
