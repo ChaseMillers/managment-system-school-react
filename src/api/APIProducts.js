@@ -41,8 +41,8 @@ export const getProducts =({ setLoading, setProducts})=>{
     })
 }
 
-export const deleteByID =({products, setReload, reload})=>{
-    axios.delete(`${URL}/api/product/${products.id}`).then(
+export const deleteByID =({info, setReload, reload})=>{
+    axios.delete(`${URL}/api/product/${info.id}`).then(
         response => { 
             console.log(response.data)
             setReload(!reload)
@@ -66,6 +66,18 @@ export const editProduct =({data, setReload, reload, products})=>{
         response => { 
             console.log(response.data)
             setReload(!reload)
+    })
+    .catch(error => {
+        const msg = error.response.data
+        console.log(error.response.data);
+    })
+}
+
+export const getProductByID =({products, setMoreInfo})=>{
+    axios.get(`${URL}/api/product/${products.id}`).then(
+        response => { 
+            console.log(response.data)
+            setMoreInfo(response.data)
     })
     .catch(error => {
         const msg = error.response.data
